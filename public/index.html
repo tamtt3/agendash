@@ -47,6 +47,7 @@
                 <tr>
                   <th>Status</th>
                   <th>Name</th>
+                  <th>Desc</th>
                   <th>Last run started</th>
                   <th>Next run starts</th>
                   <th>Last finished</th>
@@ -70,6 +71,10 @@
           <div class="form-group">
             <label>Job name</label>
             <input type="text" class="job-name form-control">
+          </div>
+          <div class="form-group">
+            <label>Job Desc</label>
+            <input type="text" class="job-desc form-control">
           </div>
           <div class="form-group">
             <label>Schedule</label>
@@ -128,6 +133,9 @@
       </td>
       <td>
         <%- job.name %>
+      </td>
+      <td>
+        <%- job.data.desc %>
       </td>
       <td><% if (job.lastRunAt) { %><time datetime="<%- moment(job.lastRunAt).toISOString() %>"><%- moment(job.lastRunAt).fromNow() %></time><% } %></td>
       <td><% if (job.nextRunAt) { %><time datetime="<%- moment(job.nextRunAt).toISOString() %>"><%- moment(job.nextRunAt).fromNow() %></time><% } %></td>
